@@ -13,6 +13,11 @@ export default new Router({
       meta: {title: '首页'},
       children:[
         {
+          path: '/index',
+          component: resolve => require(['../components/pages/Index.vue'], resolve),
+          meta: {title: '关注'},
+        },
+        {
           //技能组件
           path:'/skills',
           component: resolve => require(['../components/pages/Skills.vue'], resolve),
