@@ -11,6 +11,20 @@ export default new Router({
       redirect:'/index',
       component: resolve => require(['../components/common/Home.vue'], resolve),
       meta: {title: '首页'},
+      children:[
+        {
+          //技能组件
+          path:'/Skills',
+          component: resolve => require(['../components/pages/Skills.vue'], resolve),
+          meta: {title: '技能'},
+        },
+        {
+          //智慧生活
+          path:'/Equipment',
+          component: resolve => require(['../components/pages/Equipment.vue'], resolve),
+          meta:{title:'智慧生活'}
+        }
+      ]
     }
   ]
 })
