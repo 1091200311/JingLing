@@ -3,7 +3,7 @@
     <v-head></v-head>
     <div>
       <keep-alive>
-        <router-view> </router-view>
+        <router-view></router-view>
       </keep-alive>
     </div>
     <v-footer></v-footer>

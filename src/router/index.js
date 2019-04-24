@@ -14,13 +14,13 @@ export default new Router({
       children:[
         {
           //技能组件
-          path:'/Skills',
+          path:'/skills',
           component: resolve => require(['../components/pages/Skills.vue'], resolve),
           meta: {title: '技能'},
         },
         {
           //智慧生活
-          path:'/Equipment',
+          path:'/equipment',
           component: resolve => require(['../components/pages/Equipment.vue'], resolve),
           meta:{title:'智慧生活'}
         }
