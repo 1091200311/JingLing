@@ -33,7 +33,7 @@
           },
           {
             "id":3,
-            "url":"'https://img.alicdn.com/tfs/TB1JB5vsirpK1RjSZFhXXXSdXXa-1200-450.png"
+            "url":"https://img.alicdn.com/tfs/TB12yqrslLoK1RjSZFuXXXn0XXa-1200-450.png"
           }
         ]
       }
