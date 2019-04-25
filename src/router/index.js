@@ -30,6 +30,12 @@ export default new Router({
           meta:{title:'智慧生活'}
         }
       ]
-    }
+    },
+    {
+      // 个人中心组件
+      path: '/u',
+      component: resolve => require(['../components/pages/User.vue'], resolve),
+      meta: {title: '个人中心'}
+    },
   ]
 })
