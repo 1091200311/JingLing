@@ -9,13 +9,65 @@
           </div>
           <div>
             <b-card no-body>
-              <b-tabs pills card style="text-align: center">
-                <b-tab title="娱乐" active><b-card-text style="width:1184px">
+              <b-tabs pills card style="text-align: center;">
+                <b-tab title="娱乐">
+                  <b-card-text>
+                  <b-row>
+                    <b-col cols="3" v-for="entertainment in entertainmentList" :key="entertainment.id">
+                      <div style="position: relative;padding: 20px">
+                      <img class="tip" :src="entertainment.url">
+                      <div class="name">{{entertainment.name}}</div>
+                      <p class="desc">{{entertainment.desc}}</p>
+                      </div>
+                    </b-col>
+                  </b-row>
+                </b-card-text>
+                </b-tab>
+                <b-tab title="生活"><b-card-text>
+                  <b-row>
+                    <b-col cols="3" v-for="life in lifeList" :key="life.id">
+                      <div style="position: relative;padding: 20px">
+                        <img class="tip" :src="life.url">
+                        <div class="name">{{life.name}}</div>
+                        <p class="desc">{{life.desc}}</p>
+                      </div>
+                    </b-col>
+                  </b-row>
+                </b-card-text>
+                </b-tab>
+                <b-tab title="教育"><b-card-text>
+                  <b-row>
+                    <b-col cols="3" v-for="education in educationList" :key="education.id">
+                      <div style="position: relative;padding: 20px">
+                        <img class="tip" :src="education.url">
+                        <div class="name">{{education.name}}</div>
+                        <p class="desc">{{education.desc}}</p>
+                      </div>
+                    </b-col>
+                  </b-row>
                 </b-card-text></b-tab>
-                <b-tab title="生活"><b-card-text style="width:1184px"></b-card-text></b-tab>
-                <b-tab title="教育"><b-card-text style="width:1184px"></b-card-text></b-tab>
-                <b-tab title="游戏"><b-card-text style="width:1184px"></b-card-text></b-tab>
-                <b-tab title="工具"><b-card-text style="width:1184px"></b-card-text></b-tab>
+                <b-tab title="游戏"><b-card-text>
+                  <b-row>
+                    <b-col cols="3" v-for="games in gameList" :key="games.id">
+                      <div style="position: relative;padding: 20px">
+                        <img class="tip" :src="games.url">
+                        <div class="name">{{games.name}}</div>
+                        <p class="desc">{{games.desc}}</p>
+                      </div>
+                    </b-col>
+                  </b-row>
+                </b-card-text></b-tab>
+                <b-tab title="工具"><b-card-text>
+                  <b-row>
+                    <b-col cols="3" v-for="tools in toolList" :key="tools.id">
+                      <div style="position: relative;padding: 20px">
+                        <img class="tip" :src="tools.url">
+                        <div class="name">{{tools.name}}</div>
+                        <p class="desc">{{tools.desc}}</p>
+                      </div>
+                    </b-col>
+                  </b-row>
+                </b-card-text></b-tab>
               </b-tabs>
             </b-card>
           </div>
@@ -32,10 +84,145 @@
       components: {
         vCarousel,
       },
+      data(){
+        return{
+          entertainmentList:[
+            {
+              "id":1,
+              "url":"http://ailabs.alibabausercontent.com/images/36062/1551065148969.png",
+              "name":"精灵点歌台",
+              "desc":"“点歌台”"
+            },
+            {
+              "id":2,
+              "url":"http://ailabs.alibabausercontent.com/images/22370/1550564970673.png",
+              "name":"超级方言",
+              "desc":"“超级语言，来句河南话”"
+            },
+            {
+              "id":3,
+              "url":"http://ailabs.alibabausercontent.com/images/25434/1545989125974.png",
+              "name":"记忆王者",
+              "desc":"“打开记忆王者”"
+            },
+            {
+              "id":4,
+              "url":"http://ailabs.alibabausercontent.com/images/23361/1543895935384.png",
+              "name":"幸运数字",
+              "desc":"“打开幸运数字”"
+            },
+            {
+              "id":5,
+              "url":"http://ailabs.alibabausercontent.com/images/20636/1543591040749.png",
+              "name":"每周热歌榜",
+              "desc":"“每周热歌榜”"
+            },
+            {
+              "id":6,
+              "url":"http://ailabs.alibabausercontent.com/images/20636/1543591010903.png",
+              "name":"每周新歌榜",
+              "desc":"“每周新歌榜”"
+            },
+            {
+              "id":7,
+              "url":"http://ailabs.alibabausercontent.com/images/1987/1541502657847.png",
+              "name":"单身签到",
+              "desc":"“打开单身签到”"
+            },
+            {
+              "id":8,
+              "url":"http://ailabs.alibabausercontent.com/images/20636/1543590930639.png",
+              "name":"来首好歌",
+              "desc":"“来首好歌”"
+            },
+          ],
+          lifeList:[
+            {
+              "id":1,
+              "url":"http://ailabs.alibabausercontent.com/images/26734/1552900535439.jpg",
+              "name":"二里 微光",
+              "desc":"“微光再讲”"
+            },
+            {
+              "id":2,
+              "url":"http://ailabs.alibabausercontent.com/images/26734/1552900535439.jpg",
+              "name":"八段锦 口令版",
+              "desc":"“八段锦”"
+            },
+            {
+              "id":3,
+              "url":"http://ailabs.alibabausercontent.com/images/26745/1551972238238.jpeg",
+              "name":"女王节栏目",
+              "desc":"“女王节栏目”"
+            },
+            {
+              "id":4,
+              "url":"http://ailabs.alibabausercontent.com/images/26732/1551925942443.jpg",
+              "name":"张德芬访谈",
+              "desc":"“张德芬访谈”"
+            },
+          ],
+          educationList:[
+            {
+              "id":1,
+              "url":"http://ailabs.alibabausercontent.com/images/42954/1554092991849.png",
+              "name":"汉源语文",
+              "desc":"“汉源语文”"
+            },
+            {
+              "id":2,
+              "url":"http://ailabs.alibabausercontent.com/images/1147/1553504365134.png",
+              "name":"义方小学英语",
+              "desc":"“义方小学英语”"
+            },
+          ],
+          gameList:[
+            {
+              "id":1,
+              "url":"http://ailabs.alibabausercontent.com/images/7660/1550200120211.png",
+              "name":"脑筋急转弯",
+              "desc":"“脑筋急转弯 开始游戏”"
+            },
+          ],
+          toolList:[
+            {
+              "id":1,
+              "url":"http://ailabs.alibabausercontent.com/images/38577/1552706662423.png",
+              "name":"好型",
+              "desc":"“天猫精灵，好身材{我的体重是多少}”"
+            },
+          ]
+        }
+      }
     }
 </script>
 
 <style scoped>
+  .desc{
+    margin-top: 10px;
+    font-size: 14px;
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .name{
+    margin-top: 68px;
+    font-size: 20px;
+    color: #000;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .tip{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 44px;
+    height: 44px;
+    border: 4px solid rgba(0,130,255,.2);
+    border-radius: 100%;
+  }
   p{
     margin: 18px 0 28px 0;
     font-size: 14px;
