@@ -12,10 +12,11 @@
           <div>
             <b-card no-body>
               <b-tabs pills card style="text-align: center">
-                <b-tab title="类目" active><b-card-text style="width:1184px">
+                <b-tab title="类目"><b-card-text>
+                  <v-carousel1></v-carousel1>
                 </b-card-text></b-tab>
-                <b-tab title="品牌"><b-card-text style="width:1184px"></b-card-text></b-tab>
-                <b-tab title="平台"><b-card-text style="width:1184px"></b-card-text></b-tab>
+                <b-tab title="品牌"><b-card-text><v-carousel1></v-carousel1></b-card-text></b-tab>
+                <b-tab title="平台"><b-card-text><v-carousel1></v-carousel1></b-card-text></b-tab>
               </b-tabs>
             </b-card>
           </div>
@@ -25,8 +26,13 @@
 </template>
 
 <script>
+  import  vCarousel1 from '../common/Carousel1';
+  import 'bootstrap/dist/css/bootstrap.css'
+  import 'bootstrap-vue/dist/bootstrap-vue.css'
     export default {
-        name: "Equipment"
+      components: {
+        vCarousel1,
+      },
     }
 </script>
 

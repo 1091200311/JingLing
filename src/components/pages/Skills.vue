@@ -14,11 +14,13 @@
                   <b-card-text>
                   <b-row>
                     <b-col cols="3" v-for="entertainment in entertainmentList" :key="entertainment.id">
-                      <div style="position: relative;padding: 20px">
+                      <el-button type="text" @click="open">
+                      <div style="position: relative;padding: 20px;box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);">
                       <img class="tip" :src="entertainment.url">
                       <div class="name">{{entertainment.name}}</div>
                       <p class="desc">{{entertainment.desc}}</p>
                       </div>
+                      </el-button>
                     </b-col>
                   </b-row>
                 </b-card-text>
@@ -26,7 +28,7 @@
                 <b-tab title="生活"><b-card-text>
                   <b-row>
                     <b-col cols="3" v-for="life in lifeList" :key="life.id">
-                      <div style="position: relative;padding: 20px">
+                      <div style="position: relative;padding: 20px;box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);">
                         <img class="tip" :src="life.url">
                         <div class="name">{{life.name}}</div>
                         <p class="desc">{{life.desc}}</p>
@@ -38,7 +40,7 @@
                 <b-tab title="教育"><b-card-text>
                   <b-row>
                     <b-col cols="3" v-for="education in educationList" :key="education.id">
-                      <div style="position: relative;padding: 20px">
+                      <div style="position: relative;padding: 20px;box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);">
                         <img class="tip" :src="education.url">
                         <div class="name">{{education.name}}</div>
                         <p class="desc">{{education.desc}}</p>
@@ -49,7 +51,7 @@
                 <b-tab title="游戏"><b-card-text>
                   <b-row>
                     <b-col cols="3" v-for="games in gameList" :key="games.id">
-                      <div style="position: relative;padding: 20px">
+                      <div style="position: relative;padding: 20px;box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);">
                         <img class="tip" :src="games.url">
                         <div class="name">{{games.name}}</div>
                         <p class="desc">{{games.desc}}</p>
@@ -60,7 +62,7 @@
                 <b-tab title="工具"><b-card-text>
                   <b-row>
                     <b-col cols="3" v-for="tools in toolList" :key="tools.id">
-                      <div style="position: relative;padding: 20px">
+                      <div style="position: relative;padding: 20px;box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);">
                         <img class="tip" :src="tools.url">
                         <div class="name">{{tools.name}}</div>
                         <p class="desc">{{tools.desc}}</p>
@@ -192,6 +194,19 @@
               "desc":"“天猫精灵，好身材{我的体重是多少}”"
             },
           ]
+        }
+      },
+      methods: {
+        open() {
+          // this.$alert('这是一段内容', '标题名称', {
+          //   // confirmButtonText: '确定',
+          //   // callback: action => {
+          //   //   this.$message({
+          //   //     type: 'info',
+          //   //     message: `action: ${action}`
+          //   //   });
+          //   // }
+          // });
         }
       }
     }

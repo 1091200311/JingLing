@@ -28,7 +28,7 @@ export default new Router({
           path:'/equipment',
           component: resolve => require(['../components/pages/Equipment.vue'], resolve),
           meta:{title:'智慧生活'}
-        }
+        },
       ]
     },
     {
