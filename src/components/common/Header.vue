@@ -5,6 +5,9 @@
         <b-collapse is-nav id="nav_collapse">
           <b-navbar-nav style="margin-left: 400px">
             <b-nav-item>
+              <router-link to="/index">首页</router-link>
+            </b-nav-item>
+            <b-nav-item>
               <router-link to="/skills">魔法技能</router-link>
             </b-nav-item>
             <b-nav-item>

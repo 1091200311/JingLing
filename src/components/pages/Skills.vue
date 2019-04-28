@@ -14,13 +14,13 @@
                   <b-card-text>
                   <b-row>
                     <b-col cols="3" v-for="entertainment in entertainmentList" :key="entertainment.id">
-                      <el-button type="text" @click="open">
-                      <div style="position: relative;padding: 20px;box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);">
+                      <b-button v-b-modal.modal-1>
+                      <div style="position: relative;padding: 20px;">
                       <img class="tip" :src="entertainment.url">
                       <div class="name">{{entertainment.name}}</div>
                       <p class="desc">{{entertainment.desc}}</p>
                       </div>
-                      </el-button>
+                      </b-button>
                     </b-col>
                   </b-row>
                 </b-card-text>
@@ -177,6 +177,18 @@
               "name":"义方小学英语",
               "desc":"“义方小学英语”"
             },
+            {
+              "id":3,
+              "url":"http://ailabs.alibabausercontent.com/images/44222/1555491683550.png",
+              "name":"高考倒计时",
+              "desc":"“高考倒计时”"
+            },
+            {
+              "id":4,
+              "url":"http://ailabs.alibabausercontent.com/images/1147/1551341169625.png",
+              "name":"义方幼儿阅读",
+              "desc":"“义方幼儿阅读”",
+            }
           ],
           gameList:[
             {
@@ -185,6 +197,24 @@
               "name":"脑筋急转弯",
               "desc":"“脑筋急转弯 开始游戏”"
             },
+            {
+              "id":2,
+              "url":"http://ailabs.alibabausercontent.com/images/7660/1550200120211.png",
+              "name":"脑筋急转弯",
+              "desc":"“脑筋急转弯 开始游戏”"
+            },
+            {
+              "id":3,
+              "url":"http://ailabs.alibabausercontent.com/images/7660/1550200120211.png",
+              "name":"脑筋急转弯",
+              "desc":"“脑筋急转弯 开始游戏”"
+            },
+            {
+              "id":4,
+              "url":"http://ailabs.alibabausercontent.com/images/7660/1550200120211.png",
+              "name":"脑筋急转弯",
+              "desc":"“脑筋急转弯 开始游戏”"
+            }
           ],
           toolList:[
             {
@@ -193,26 +223,36 @@
               "name":"好型",
               "desc":"“天猫精灵，好身材{我的体重是多少}”"
             },
+            {
+              "id":2,
+              "url":"http://ailabs.alibabausercontent.com/images/38577/1552706662423.png",
+              "name":"好型",
+              "desc":"“天猫精灵，好身材{我的体重是多少}”"
+            },
+            {
+              "id":3,
+              "url":"http://ailabs.alibabausercontent.com/images/38577/1552706662423.png",
+              "name":"好型",
+              "desc":"“天猫精灵，好身材{我的体重是多少}”"
+            },
+            {
+              "id":4,
+              "url":"http://ailabs.alibabausercontent.com/images/38577/1552706662423.png",
+              "name":"好型",
+              "desc":"“天猫精灵，好身材{我的体重是多少}”"
+            },
           ]
         }
       },
-      methods: {
-        open() {
-          // this.$alert('这是一段内容', '标题名称', {
-          //   // confirmButtonText: '确定',
-          //   // callback: action => {
-          //   //   this.$message({
-          //   //     type: 'info',
-          //   //     message: `action: ${action}`
-          //   //   });
-          //   // }
-          // });
-        }
-      }
     }
 </script>
 
 <style scoped>
+  .right{
+    display: inline-block;
+    vertical-align: top;
+    width: 35%;
+  }
   .desc{
     margin-top: 10px;
     font-size: 14px;
