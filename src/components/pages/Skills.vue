@@ -1,4 +1,4 @@
-<template>
+<template xmlns:b-col="http://www.w3.org/1999/html">
     <div>
       <v-carousel></v-carousel>
       <div style="padding-top: 50px">
@@ -23,6 +23,13 @@
                       </b-button>
                     </b-col>
                   </b-row>
+<!--                    <b-modal id="modal-1">-->
+<!--                      <b-row>-->
+<!--                        <b-col>-->
+
+<!--                        </b-col>-->
+<!--                      </b-row>-->
+<!--                    </b-modal>-->
                 </b-card-text>
                 </b-tab>
                 <b-tab title="生活"><b-card-text>
@@ -93,7 +100,15 @@
               "id":1,
               "url":"http://ailabs.alibabausercontent.com/images/36062/1551065148969.png",
               "name":"精灵点歌台",
-              "desc":"“点歌台”"
+              "desc":"“点歌台”",
+              "entertainmentDetails":[
+                {
+                  "pic":"http://ailabs.alibabausercontent.com/images/36062/1551065148969.png",
+                  "DetailName":"精灵点歌台",
+                  "DetailDesc":"“点歌台”",
+                  "DetailContent":"首歌送给你爱的人。一首好歌，一个故事，陪你度过每一天。"
+                },
+              ]
             },
             {
               "id":2,
@@ -244,7 +259,7 @@
           ]
         }
       },
-    }
+      }
 </script>
 
 <style scoped>
