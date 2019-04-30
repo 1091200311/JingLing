@@ -20,6 +20,7 @@
               "id": 1,
               "url": "https://ai-genie-center.oss-cn-hangzhou.aliyuncs.com/app-data/iot-center/fridge800.png",
               "name":"冰箱",
+              "BrandsName":"fridge"
             },
             {
               "id": 2,

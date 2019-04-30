@@ -14,22 +14,13 @@
                   <b-card-text>
                   <b-row>
                     <b-col cols="3" v-for="entertainment in entertainmentList" :key="entertainment.id">
-                      <b-button v-b-modal.modal-1>
                       <div style="position: relative;padding: 20px;">
                       <img class="tip" :src="entertainment.url">
                       <div class="name">{{entertainment.name}}</div>
                       <p class="desc">{{entertainment.desc}}</p>
                       </div>
-                      </b-button>
                     </b-col>
                   </b-row>
-<!--                    <b-modal id="modal-1">-->
-<!--                      <b-row>-->
-<!--                        <b-col>-->
-
-<!--                        </b-col>-->
-<!--                      </b-row>-->
-<!--                    </b-modal>-->
                 </b-card-text>
                 </b-tab>
                 <b-tab title="生活"><b-card-text>
