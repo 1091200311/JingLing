@@ -14,11 +14,13 @@
                   <b-card-text>
                   <b-row>
                     <b-col cols="3" v-for="entertainment in entertainmentList" :key="entertainment.id">
-                      <div style="position: relative;padding: 20px;">
-                      <img class="tip" :src="entertainment.url">
-                      <div class="name">{{entertainment.name}}</div>
-                      <p class="desc">{{entertainment.desc}}</p>
+                      <router-link :to="'/s/'+entertainment.id">
+                      <div style="position: relative;padding: 20px;" >
+                        <img class="tip" :src="entertainment.url">
+                        <div class="name">{{entertainment.name}}</div>
+                        <p class="desc">{{entertainment.desc}}</p>
                       </div>
+                      </router-link>
                     </b-col>
                   </b-row>
                 </b-card-text>
@@ -84,181 +86,177 @@
       components: {
         vCarousel,
       },
-      data(){
-        return{
-          entertainmentList:[
+
+      data() {
+        return {
+          entertainmentList: [
             {
-              "id":1,
-              "url":"http://ailabs.alibabausercontent.com/images/36062/1551065148969.png",
-              "name":"精灵点歌台",
-              "desc":"“点歌台”",
-              "entertainmentDetails":[
+              "id": 1,
+              "url": "http://ailabs.alibabausercontent.com/images/36062/1551065148969.png",
+              "name": "精灵点歌台",
+              "desc": "“点歌台”",
+              "entertainmentDetails": [
                 {
-                  "pic":"http://ailabs.alibabausercontent.com/images/36062/1551065148969.png",
-                  "DetailName":"精灵点歌台",
-                  "DetailDesc":"“点歌台”",
-                  "DetailContent":"首歌送给你爱的人。一首好歌，一个故事，陪你度过每一天。"
+                  "pic": "http://ailabs.alibabausercontent.com/images/36062/1551065148969.png",
+                  "DetailName": "精灵点歌台",
+                  "DetailDesc": "“点歌台”",
+                  "DetailContent": "首歌送给你爱的人。一首好歌，一个故事，陪你度过每一天。"
                 },
               ]
             },
             {
-              "id":2,
-              "url":"http://ailabs.alibabausercontent.com/images/22370/1550564970673.png",
-              "name":"超级方言",
-              "desc":"“超级语言，来句河南话”"
+              "id": 2,
+              "url": "http://ailabs.alibabausercontent.com/images/22370/1550564970673.png",
+              "name": "超级方言",
+              "desc": "“超级语言，来句河南话”"
             },
             {
-              "id":3,
-              "url":"http://ailabs.alibabausercontent.com/images/25434/1545989125974.png",
-              "name":"记忆王者",
-              "desc":"“打开记忆王者”"
+              "id": 3,
+              "url": "http://ailabs.alibabausercontent.com/images/25434/1545989125974.png",
+              "name": "记忆王者",
+              "desc": "“打开记忆王者”"
             },
             {
-              "id":4,
-              "url":"http://ailabs.alibabausercontent.com/images/23361/1543895935384.png",
-              "name":"幸运数字",
-              "desc":"“打开幸运数字”"
+              "id": 4,
+              "url": "http://ailabs.alibabausercontent.com/images/23361/1543895935384.png",
+              "name": "幸运数字",
+              "desc": "“打开幸运数字”"
             },
             {
-              "id":5,
-              "url":"http://ailabs.alibabausercontent.com/images/20636/1543591040749.png",
-              "name":"每周热歌榜",
-              "desc":"“每周热歌榜”"
+              "id": 5,
+              "url": "http://ailabs.alibabausercontent.com/images/20636/1543591040749.png",
+              "name": "每周热歌榜",
+              "desc": "“每周热歌榜”"
             },
             {
-              "id":6,
-              "url":"http://ailabs.alibabausercontent.com/images/20636/1543591010903.png",
-              "name":"每周新歌榜",
-              "desc":"“每周新歌榜”"
+              "id": 6,
+              "url": "http://ailabs.alibabausercontent.com/images/20636/1543591010903.png",
+              "name": "每周新歌榜",
+              "desc": "“每周新歌榜”"
             },
             {
-              "id":7,
-              "url":"http://ailabs.alibabausercontent.com/images/1987/1541502657847.png",
-              "name":"单身签到",
-              "desc":"“打开单身签到”"
+              "id": 7,
+              "url": "http://ailabs.alibabausercontent.com/images/1987/1541502657847.png",
+              "name": "单身签到",
+              "desc": "“打开单身签到”"
             },
             {
-              "id":8,
-              "url":"http://ailabs.alibabausercontent.com/images/20636/1543590930639.png",
-              "name":"来首好歌",
-              "desc":"“来首好歌”"
-            },
-          ],
-          lifeList:[
-            {
-              "id":1,
-              "url":"http://ailabs.alibabausercontent.com/images/26734/1552900535439.jpg",
-              "name":"二里 微光",
-              "desc":"“微光再讲”"
-            },
-            {
-              "id":2,
-              "url":"http://ailabs.alibabausercontent.com/images/26734/1552900535439.jpg",
-              "name":"八段锦 口令版",
-              "desc":"“八段锦”"
-            },
-            {
-              "id":3,
-              "url":"http://ailabs.alibabausercontent.com/images/26745/1551972238238.jpeg",
-              "name":"女王节栏目",
-              "desc":"“女王节栏目”"
-            },
-            {
-              "id":4,
-              "url":"http://ailabs.alibabausercontent.com/images/26732/1551925942443.jpg",
-              "name":"张德芬访谈",
-              "desc":"“张德芬访谈”"
+              "id": 8,
+              "url": "http://ailabs.alibabausercontent.com/images/20636/1543590930639.png",
+              "name": "来首好歌",
+              "desc": "“来首好歌”"
             },
           ],
-          educationList:[
+          lifeList: [
             {
-              "id":1,
-              "url":"http://ailabs.alibabausercontent.com/images/42954/1554092991849.png",
-              "name":"汉源语文",
-              "desc":"“汉源语文”"
+              "id": 1,
+              "url": "http://ailabs.alibabausercontent.com/images/26734/1552900535439.jpg",
+              "name": "二里 微光",
+              "desc": "“微光再讲”"
             },
             {
-              "id":2,
-              "url":"http://ailabs.alibabausercontent.com/images/1147/1553504365134.png",
-              "name":"义方小学英语",
-              "desc":"“义方小学英语”"
+              "id": 2,
+              "url": "http://ailabs.alibabausercontent.com/images/26734/1552900535439.jpg",
+              "name": "八段锦 口令版",
+              "desc": "“八段锦”"
             },
             {
-              "id":3,
-              "url":"http://ailabs.alibabausercontent.com/images/44222/1555491683550.png",
-              "name":"高考倒计时",
-              "desc":"“高考倒计时”"
+              "id": 3,
+              "url": "http://ailabs.alibabausercontent.com/images/26745/1551972238238.jpeg",
+              "name": "女王节栏目",
+              "desc": "“女王节栏目”"
             },
             {
-              "id":4,
-              "url":"http://ailabs.alibabausercontent.com/images/1147/1551341169625.png",
-              "name":"义方幼儿阅读",
-              "desc":"“义方幼儿阅读”",
+              "id": 4,
+              "url": "http://ailabs.alibabausercontent.com/images/26732/1551925942443.jpg",
+              "name": "张德芬访谈",
+              "desc": "“张德芬访谈”"
+            },
+          ],
+          educationList: [
+            {
+              "id": 1,
+              "url": "http://ailabs.alibabausercontent.com/images/42954/1554092991849.png",
+              "name": "汉源语文",
+              "desc": "“汉源语文”"
+            },
+            {
+              "id": 2,
+              "url": "http://ailabs.alibabausercontent.com/images/1147/1553504365134.png",
+              "name": "义方小学英语",
+              "desc": "“义方小学英语”"
+            },
+            {
+              "id": 3,
+              "url": "http://ailabs.alibabausercontent.com/images/44222/1555491683550.png",
+              "name": "高考倒计时",
+              "desc": "“高考倒计时”"
+            },
+            {
+              "id": 4,
+              "url": "http://ailabs.alibabausercontent.com/images/1147/1551341169625.png",
+              "name": "义方幼儿阅读",
+              "desc": "“义方幼儿阅读”",
             }
           ],
-          gameList:[
+          gameList: [
             {
-              "id":1,
-              "url":"http://ailabs.alibabausercontent.com/images/7660/1550200120211.png",
-              "name":"脑筋急转弯",
-              "desc":"“脑筋急转弯 开始游戏”"
+              "id": 1,
+              "url": "http://ailabs.alibabausercontent.com/images/7660/1550200120211.png",
+              "name": "脑筋急转弯",
+              "desc": "“脑筋急转弯 开始游戏”"
             },
             {
-              "id":2,
-              "url":"http://ailabs.alibabausercontent.com/images/7660/1550200120211.png",
-              "name":"脑筋急转弯",
-              "desc":"“脑筋急转弯 开始游戏”"
+              "id": 2,
+              "url": "http://ailabs.alibabausercontent.com/images/7660/1550200120211.png",
+              "name": "脑筋急转弯",
+              "desc": "“脑筋急转弯 开始游戏”"
             },
             {
-              "id":3,
-              "url":"http://ailabs.alibabausercontent.com/images/7660/1550200120211.png",
-              "name":"脑筋急转弯",
-              "desc":"“脑筋急转弯 开始游戏”"
+              "id": 3,
+              "url": "http://ailabs.alibabausercontent.com/images/7660/1550200120211.png",
+              "name": "脑筋急转弯",
+              "desc": "“脑筋急转弯 开始游戏”"
             },
             {
-              "id":4,
-              "url":"http://ailabs.alibabausercontent.com/images/7660/1550200120211.png",
-              "name":"脑筋急转弯",
-              "desc":"“脑筋急转弯 开始游戏”"
+              "id": 4,
+              "url": "http://ailabs.alibabausercontent.com/images/7660/1550200120211.png",
+              "name": "脑筋急转弯",
+              "desc": "“脑筋急转弯 开始游戏”"
             }
           ],
-          toolList:[
+          toolList: [
             {
-              "id":1,
-              "url":"http://ailabs.alibabausercontent.com/images/38577/1552706662423.png",
-              "name":"好型",
-              "desc":"“天猫精灵，好身材{我的体重是多少}”"
+              "id": 1,
+              "url": "http://ailabs.alibabausercontent.com/images/38577/1552706662423.png",
+              "name": "好型",
+              "desc": "“天猫精灵，好身材{我的体重是多少}”"
             },
             {
-              "id":2,
-              "url":"http://ailabs.alibabausercontent.com/images/38577/1552706662423.png",
-              "name":"好型",
-              "desc":"“天猫精灵，好身材{我的体重是多少}”"
+              "id": 2,
+              "url": "http://ailabs.alibabausercontent.com/images/38577/1552706662423.png",
+              "name": "好型",
+              "desc": "“天猫精灵，好身材{我的体重是多少}”"
             },
             {
-              "id":3,
-              "url":"http://ailabs.alibabausercontent.com/images/38577/1552706662423.png",
-              "name":"好型",
-              "desc":"“天猫精灵，好身材{我的体重是多少}”"
+              "id": 3,
+              "url": "http://ailabs.alibabausercontent.com/images/38577/1552706662423.png",
+              "name": "好型",
+              "desc": "“天猫精灵，好身材{我的体重是多少}”"
             },
             {
-              "id":4,
-              "url":"http://ailabs.alibabausercontent.com/images/38577/1552706662423.png",
-              "name":"好型",
-              "desc":"“天猫精灵，好身材{我的体重是多少}”"
+              "id": 4,
+              "url": "http://ailabs.alibabausercontent.com/images/38577/1552706662423.png",
+              "name": "好型",
+              "desc": "“天猫精灵，好身材{我的体重是多少}”"
             },
           ]
         }
-      },
       }
+    }
 </script>
 
 <style scoped>
-  .right{
-    display: inline-block;
-    vertical-align: top;
-    width: 35%;
-  }
   .desc{
     margin-top: 10px;
     font-size: 14px;

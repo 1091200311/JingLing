@@ -13,7 +13,6 @@ Vue.use(jquery)
 Vue.use(bootstrap)
 Vue.use(ElementUI)
 library.add(faCoffee)
-Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
 Vue.prototype.$http=axios
 Vue.config.productionTip = false

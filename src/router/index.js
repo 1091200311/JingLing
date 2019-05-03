@@ -29,7 +29,18 @@ export default new Router({
           component: resolve => require(['../components/pages/Equipment.vue'], resolve),
           meta:{title:'智慧生活'}
         },
-      ]
+       ]
+    },
+    {
+      path:'/e/:id',
+      component: resolve => require(['../components/pages/EquipmentDetail.vue'], resolve),
+      meta:{title:'商品详情'}
+    },
+    {
+      //商品详情
+      path:'/s/:id',
+      component: resolve => require(['../components/pages/SkillsDetail.vue'], resolve),
+      meta:{title:'商品详情'}
     },
     {
       // 个人中心组件
