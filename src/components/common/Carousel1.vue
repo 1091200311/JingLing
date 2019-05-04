@@ -2,7 +2,7 @@
     <div>
       <b-row style="margin: 40px auto;clear: both;min-height: 320px;">
         <b-col cols="3" v-for="brands in brandsList" :key="brands.id">
-            <div class="list">
+            <div class="list" :id="brands.BrandsName">
               <img class="tip" :src="brands.url">
               <p class="name">{{brands.name}}</p>
             </div>
@@ -26,36 +26,43 @@
               "id": 2,
               "url": "https://ai-genie-center.oss-cn-hangzhou.aliyuncs.com/app-data/iot-center/outlet800.png",
               "name": "插座",
+              "BrandsName":"Socket"
             },
             {
               "id": 3,
               "url": "https://ai-genie-center.oss-cn-hangzhou.aliyuncs.com/app-data/iot-center/scale_800.png",
               "name": "秤",
+              "BrandsName":"balance"
             },
             {
               "id": 4,
               "url": "https://ai-genie-center.oss-cn-hangzhou.aliyuncs.com/app-data/iot-center/kitchenventilator800.png",
               "name": "抽油烟机",
+              "BrandsName":"Smoke lampblack machine"
             },
             {
               "id": 5,
               "url": "https://ai-genie-center.oss-cn-hangzhou.aliyuncs.com/app-data/iot-center/dehumidifier800.png",
               "name": "除湿机",
+              "BrandsName":"Dehumidifier"
             },
             {
               "id": 6,
               "url": "https://ai-genie-center.oss-cn-hangzhou.aliyuncs.com/app-data/iot-center/sensor800.png",
               "name": "传感器",
+              "BrandsName":"sensor"
             },
             {
               "id": 7,
               "url": "https://ai-genie-center.oss-cn-hangzhou.aliyuncs.com/app-data/iot-center/window800.png",
               "name": "窗",
+              "BrandsName":"window"
             },
             {
               "id": 8,
               "url": "https://ai-genie-center.oss-cn-hangzhou.aliyuncs.com/app-data/iot-center/curtain800.png",
               "name": "窗帘",
+              "BrandsName":"Window curtains"
             },
           ],
         }

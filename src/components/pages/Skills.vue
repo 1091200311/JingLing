@@ -15,7 +15,7 @@
                   <b-row>
                     <b-col cols="3" v-for="entertainment in entertainmentList" :key="entertainment.id">
                       <router-link :to="'/s/'+entertainment.id">
-                      <div style="position: relative;padding: 20px;" >
+                      <div style="position: relative;padding: 20px;box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);">
                         <img class="tip" :src="entertainment.url">
                         <div class="name">{{entertainment.name}}</div>
                         <p class="desc">{{entertainment.desc}}</p>
@@ -28,11 +28,13 @@
                 <b-tab title="生活"><b-card-text>
                   <b-row>
                     <b-col cols="3" v-for="life in lifeList" :key="life.id">
+                      <router-link :to="'s'/+life.id">
                       <div style="position: relative;padding: 20px;box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);">
                         <img class="tip" :src="life.url">
                         <div class="name">{{life.name}}</div>
                         <p class="desc">{{life.desc}}</p>
                       </div>
+                      </router-link>
                     </b-col>
                   </b-row>
                 </b-card-text>
@@ -40,11 +42,13 @@
                 <b-tab title="教育"><b-card-text>
                   <b-row>
                     <b-col cols="3" v-for="education in educationList" :key="education.id">
+                      <router-link :to="'s'/+education.id">
                       <div style="position: relative;padding: 20px;box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);">
                         <img class="tip" :src="education.url">
                         <div class="name">{{education.name}}</div>
                         <p class="desc">{{education.desc}}</p>
                       </div>
+                      </router-link>
                     </b-col>
                   </b-row>
                 </b-card-text></b-tab>

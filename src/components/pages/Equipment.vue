@@ -14,14 +14,14 @@
               <b-tabs pills card style="text-align: center">
                 <b-tab title="类目"><b-card-text>
                   <el-menu :default-active="activeIndex"  style="width: 100%" class="m-fixnav" mode="horizontal" @select="handleSelect">
-                    <el-menu-item index="1"><a href="#fridge"></a>冰箱</el-menu-item>
-                    <el-menu-item index="2">插座</el-menu-item>
-                    <el-menu-item index="3">秤</el-menu-item>
-                    <el-menu-item index="4">抽油烟机</el-menu-item>
-                    <el-menu-item index="5">除湿器</el-menu-item>
-                    <el-menu-item index="6">传感器</el-menu-item>
-                    <el-menu-item index="7">窗</el-menu-item>
-                    <el-menu-item index="8">窗帘</el-menu-item>
+                    <el-menu-item index="1"><a href="#fridge">冰箱</a></el-menu-item>
+                    <el-menu-item index="2"><a href="#Socket">插座</a></el-menu-item>
+                    <el-menu-item index="3"><a href="#balance">秤</a></el-menu-item>
+                    <el-menu-item index="4"><a href="#Smoke lampblack machine">抽油烟机</a></el-menu-item>
+                    <el-menu-item index="5"><a href="#Dehumidifier">除湿器</a></el-menu-item>
+                    <el-menu-item index="6"><a href="#sensor">传感器</a></el-menu-item>
+                    <el-menu-item index="7"><a href="#window">窗</a></el-menu-item>
+                    <el-menu-item index="8"><a href="#Window curtains">窗帘</a>></el-menu-item>
                   </el-menu>
                   <v-carousel1></v-carousel1>
                 </b-card-text></b-tab>
