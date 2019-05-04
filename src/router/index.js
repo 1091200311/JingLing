@@ -24,12 +24,6 @@ export default new Router({
           meta: {title: '技能'},
         },
         {
-          //单机详情
-          path:'/s/:id',
-          component: resolve => require(['../components/pages/SkillsDetail.vue'], resolve),
-          meta:{title:'技能详情'}
-        },
-        {
           //智慧生活
           path:'/equipment',
           component: resolve => require(['../components/pages/Equipment.vue'], resolve),
@@ -42,12 +36,12 @@ export default new Router({
       component: resolve => require(['../components/pages/EquipmentDetail.vue'], resolve),
       meta:{title:'仪器详情'}
     },
-    // {
-    //   //单机详情
-    //   path:'/s/:id',
-    //   component: resolve => require(['../components/pages/SkillsDetail.vue'], resolve),
-    //   meta:{title:'技能详情'}
-    // },
+    {
+      //单击详情
+      path:'/s/:id',
+      component: resolve => require(['../components/pages/SkillsDetail.vue'], resolve),
+      meta:{title:'技能详情'}
+    },
     {
       // 个人中心组件
       path: '/u',

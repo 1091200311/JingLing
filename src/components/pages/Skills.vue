@@ -55,23 +55,46 @@
                 <b-tab title="游戏"><b-card-text>
                   <b-row>
                     <b-col cols="3" v-for="games in gameList" :key="games.id">
+                      <el-button type="text" @click="open">
                       <div style="position: relative;padding: 20px;box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);">
                         <img class="tip" :src="games.url">
                         <div class="name">{{games.name}}</div>
                         <p class="desc">{{games.desc}}</p>
                       </div>
+                      </el-button >
                     </b-col>
                   </b-row>
                 </b-card-text></b-tab>
                 <b-tab title="工具"><b-card-text>
                   <b-row>
                     <b-col cols="3" v-for="tools in toolList" :key="tools.id">
+                      <b-buttton v-b-modal.modal-1>
                       <div style="position: relative;padding: 20px;box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);">
                         <img class="tip" :src="tools.url">
                         <div class="name">{{tools.name}}</div>
                         <p class="desc">{{tools.desc}}</p>
                       </div>
+                      </b-buttton>
                     </b-col>
+                    <b-modal id="modal-1">
+                      <div class="modal">
+                        <div style="text-align: left">
+                          <div class="left">
+                            <div class="icon">
+                              <div class="outside">
+                                <img style="width: 70px;height: 70px;" src="http://ailabs.alibabausercontent.com/images/26734/1556588950216.jpg">
+                              </div>
+                              <h3 class="name">立夏吃什么好</h3>
+                              <p class="desc">天猫精灵，立夏吃什么好？ 主人，立夏宜吃西瓜，忌操心。</p>
+                            </div>
+                          </div>
+                          <div class="right">
+                            <div style="font-size: 22px">你可以这样问</div>
+                            <div>立夏吃什么好</div>
+                          </div>
+                        </div>
+                      </div>
+                    </b-modal>
                   </b-row>
                 </b-card-text></b-tab>
               </b-tabs>
@@ -90,7 +113,6 @@
       components: {
         vCarousel,
       },
-
       data() {
         return {
           entertainmentList: [
@@ -99,14 +121,6 @@
               "url": "http://ailabs.alibabausercontent.com/images/36062/1551065148969.png",
               "name": "精灵点歌台",
               "desc": "“点歌台”",
-              "entertainmentDetails": [
-                {
-                  "pic": "http://ailabs.alibabausercontent.com/images/36062/1551065148969.png",
-                  "DetailName": "精灵点歌台",
-                  "DetailDesc": "“点歌台”",
-                  "DetailContent": "首歌送给你爱的人。一首好歌，一个故事，陪你度过每一天。"
-                },
-              ]
             },
             {
               "id": 2,
@@ -238,15 +252,15 @@
             },
             {
               "id": 2,
-              "url": "http://ailabs.alibabausercontent.com/images/38577/1552706662423.png",
+              "url": "http://ailabs.alibabausercontent.com/images/26734/1556588950216.jpg",
               "name": "好型",
               "desc": "“天猫精灵，好身材{我的体重是多少}”"
             },
             {
               "id": 3,
               "url": "http://ailabs.alibabausercontent.com/images/38577/1552706662423.png",
-              "name": "好型",
-              "desc": "“天猫精灵，好身材{我的体重是多少}”"
+              "name": "立夏吃什么",
+              "desc": "“立夏吃什么”"
             },
             {
               "id": 4,
@@ -256,11 +270,80 @@
             },
           ]
         }
+      },
+      methods:{
+        open(){
+          this.$alert('<div>\n' +
+            '                        <div style="text-align: left">\n' +
+            '                          <div class="left">\n' +
+            '                            <div class="icon">\n' +
+            '                              <div class="outside">\n' +
+            '                                <img style="width: 70px;height: 70px;" src="http://ailabs.alibabausercontent.com/images/26734/1556588950216.jpg">\n' +
+            '                              </div>\n' +
+            '                              <h3 class="name">立夏吃什么好</h3>\n' +
+            '                              <p class="desc">天猫精灵，立夏吃什么好？ 主人，立夏宜吃西瓜，忌操心。</p>\n' +
+            '                            </div>\n' +
+            '                          </div>\n' +
+            '                          <div class="right">\n' +
+            '                            <div style="font-size: 22px">你可以这样问</div>\n' +
+            '                            <div>立夏吃什么好</div>\n' +
+            '                          </div>\n' +
+            '                        </div>\n' +
+            '                      </div>', {
+            dangerouslyUseHTMLString: true
+          });
+        }
       }
     }
 </script>
 
 <style scoped>
+  .right{
+    display: inline-block;
+    vertical-align: top;
+    width: 35%;
+  }
+  .desc{
+    font-size: 14px;
+    width: 80%;
+  }
+  h3{
+    display: block;
+    font-size: 1.17em;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    font-weight: bold;
+  }
+  .name{
+    font-size: 30px;
+  }
+  .icon{
+    position: relative;
+    display: inline-block;
+    width: 400px;
+    height: 80px;
+  }
+  .modal{
+    display: block;
+    position: relative;
+    max-width: 900px;
+    height: auto;
+    z-index: 2000;
+  }
+  .outside{
+    border: 2px solid rgba(0,130,255,.4);
+    left: 0;
+    top: 0;
+    width: 76px;
+    height: 76px;
+  }
+  .left{
+    display: inline-block;
+    vertical-align: top;
+    width: 60%;
+  }
   .desc{
     margin-top: 10px;
     font-size: 14px;

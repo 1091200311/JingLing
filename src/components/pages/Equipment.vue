@@ -21,7 +21,7 @@
                     <el-menu-item index="5"><a href="#Dehumidifier">除湿器</a></el-menu-item>
                     <el-menu-item index="6"><a href="#sensor">传感器</a></el-menu-item>
                     <el-menu-item index="7"><a href="#window">窗</a></el-menu-item>
-                    <el-menu-item index="8"><a href="#Window curtains">窗帘</a>></el-menu-item>
+                    <el-menu-item index="8"><a href="#Window curtains">窗帘</a></el-menu-item>
                   </el-menu>
                   <v-carousel1></v-carousel1>
                 </b-card-text></b-tab>
