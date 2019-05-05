@@ -20,7 +20,7 @@
                 </b-carousel-slide>
               </b-carousel>
             </el-tab-pane>
-            <el-tab-pane label="排行" name="second">
+            <el-tab-pane  label="排行" name="second">
               <div class="container">
                 <b-row>
                   <b-col  class="box" cols="2" v-for="music in musicList" :key="music.id" style="margin: 40px auto;clear: both;min-height: 320px;">
@@ -117,7 +117,6 @@
 <style scoped>
   .song{
     position: relative;
-    /*padding-left: 15px;*/
     margin-bottom: 27px;
     list-style: none;
     text-align: center;

@@ -5,15 +5,15 @@
         <div class="left">
           <div class="icon">
             <div class="outside">
-              <img style="width: 70px;height: 70px;" src="http://ailabs.alibabausercontent.com/images/26734/1556588950216.jpg">
+              <img style="width: 70px;height: 70px;" :src="entertainment.pic">
             </div>
-            <h3 class="name">立夏吃什么好</h3>
-            <p class="desc">天猫精灵，立夏吃什么好？ 主人，立夏宜吃西瓜，忌操心。</p>
+            <h3 class="name">{{entertainment.name}}</h3>
+            <p class="desc">{{entertainment.desc}}</p>
           </div>
         </div>
         <div class="right">
           <div style="font-size: 22px">你可以这样问</div>
-          <div>立夏吃什么好</div>
+          <div>{{entertainment.name}}</div>
         </div>
       </div>
     </div>
@@ -22,7 +22,20 @@
 
 <script>
     export default {
-        name: "SkillsDetail"
+        name: "SkillsDetail",
+      data(){
+          return{
+            id:this.$route.query.id,
+            entertainment:[]
+          }
+      },
+      created() {
+          this.$http
+            .get('http://localhost:8080/entertainment/'+this.id)
+            .then(function (response) {
+              this.entertainment = response.data.entertainment;
+            })
+      }
     }
 </script>
 

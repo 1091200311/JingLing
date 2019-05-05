@@ -14,9 +14,9 @@
                   <b-card-text>
                   <b-row>
                     <b-col cols="3" v-for="entertainment in entertainmentList" :key="entertainment.id">
-                      <router-link :to="'/s/'+entertainment.id">
+                      <router-link :to="{path:'/s',query:{id:entertainment.id}}">
                       <div style="position: relative;padding: 20px;box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);">
-                        <img class="tip" :src="entertainment.url">
+                        <img class="tip" :src="entertainment.pic">
                         <div class="name">{{entertainment.name}}</div>
                         <p class="desc">{{entertainment.desc}}</p>
                       </div>
@@ -115,56 +115,8 @@
       },
       data() {
         return {
-          entertainmentList: [
-            {
-              "id": 1,
-              "url": "http://ailabs.alibabausercontent.com/images/36062/1551065148969.png",
-              "name": "精灵点歌台",
-              "desc": "“点歌台”",
-            },
-            {
-              "id": 2,
-              "url": "http://ailabs.alibabausercontent.com/images/22370/1550564970673.png",
-              "name": "超级方言",
-              "desc": "“超级语言，来句河南话”"
-            },
-            {
-              "id": 3,
-              "url": "http://ailabs.alibabausercontent.com/images/25434/1545989125974.png",
-              "name": "记忆王者",
-              "desc": "“打开记忆王者”"
-            },
-            {
-              "id": 4,
-              "url": "http://ailabs.alibabausercontent.com/images/23361/1543895935384.png",
-              "name": "幸运数字",
-              "desc": "“打开幸运数字”"
-            },
-            {
-              "id": 5,
-              "url": "http://ailabs.alibabausercontent.com/images/20636/1543591040749.png",
-              "name": "每周热歌榜",
-              "desc": "“每周热歌榜”"
-            },
-            {
-              "id": 6,
-              "url": "http://ailabs.alibabausercontent.com/images/20636/1543591010903.png",
-              "name": "每周新歌榜",
-              "desc": "“每周新歌榜”"
-            },
-            {
-              "id": 7,
-              "url": "http://ailabs.alibabausercontent.com/images/1987/1541502657847.png",
-              "name": "单身签到",
-              "desc": "“打开单身签到”"
-            },
-            {
-              "id": 8,
-              "url": "http://ailabs.alibabausercontent.com/images/20636/1543590930639.png",
-              "name": "来首好歌",
-              "desc": "“来首好歌”"
-            },
-          ],
+          entertainmentList: [],
+          entertainment:{},
           lifeList: [
             {
               "id": 1,
@@ -278,7 +230,7 @@
             '                          <div class="left">\n' +
             '                            <div class="icon">\n' +
             '                              <div class="outside">\n' +
-            '                                <img style="width: 70px;height: 70px;" src="http://ailabs.alibabausercontent.com/images/26734/1556588950216.jpg">\n' +
+            '                                <img style="width: 70px;height: 70px;" :src="entertainment.pic">\n' +
             '                              </div>\n' +
             '                              <h3 class="name">立夏吃什么好</h3>\n' +
             '                              <p class="desc">天猫精灵，立夏吃什么好？ 主人，立夏宜吃西瓜，忌操心。</p>\n' +
@@ -293,6 +245,14 @@
             dangerouslyUseHTMLString: true
           });
         }
+      },
+      created() {
+        var _this = this;
+        this.$http
+          .get('http://localhost:8080/entertainment/all')
+          .then(function (response) {
+            _this.entertainmentList = response.data;
+          })
       }
     }
 </script>
