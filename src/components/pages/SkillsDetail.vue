@@ -21,20 +21,28 @@
 </template>
 
 <script>
+  import 'bootstrap/dist/css/bootstrap.css'
+  import 'bootstrap-vue/dist/bootstrap-vue.css'
     export default {
         name: "SkillsDetail",
       data(){
           return{
-            id:this.$route.query.id,
+            id:this.$route.params.id,
             entertainment:[]
           }
       },
-      created() {
-          this.$http
-            .get('http://localhost:8080/entertainment/'+this.id)
-            .then(function (response) {
-              this.entertainment = response.data.entertainment;
-            })
+      activated() {
+        this.id=this.$route.params.id;
+        if (this.id==1){
+          this.entertainment=[
+            {
+              "id":1,
+              "pic":"https://ailabs.alibabausercontent.com/images/36062/1551065148969.png",
+              "name":"精灵点歌台",
+              "desc":"“精灵点歌台”"
+            }
+          ]
+        }
       }
     }
 </script>

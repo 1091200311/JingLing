@@ -25,8 +25,24 @@
                   </el-menu>
                   <v-carousel1></v-carousel1>
                 </b-card-text></b-tab>
-                <b-tab title="品牌"><b-card-text><v-carousel1></v-carousel1></b-card-text></b-tab>
-                <b-tab title="平台"><b-card-text><v-carousel1></v-carousel1></b-card-text></b-tab>
+                <b-tab title="品牌"><b-card-text>
+                  <el-menu default-active="activeIndex" style="width: 100%"class="m-fixnav" mode="horizontal">
+                    <el-menu-item index="1"><a href="#">全部</a></el-menu-item>
+                    <el-menu-item index="2">Midea 美的</el-menu-item>
+                    <el-menu-item index="3">OPPLE 欧普</el-menu-item>
+                    <el-menu-item index="4">Konke 控客</el-menu-item>
+                    <el-menu-item index="5">哈马妮</el-menu-item>
+                  </el-menu>
+                  <v-carousel1></v-carousel1></b-card-text></b-tab>
+                <b-tab title="平台"><b-card-text>
+                  <el-menu default-active="activeIndex" style="width: 100%"class="m-fixnav" mode="horizontal">
+                    <el-menu-item index="1"><a href="#">全部</a></el-menu-item>
+                    <el-menu-item index="2">米林客</el-menu-item>
+                    <el-menu-item index="3">征极Mesh</el-menu-item>
+                    <el-menu-item index="4">智能家居管家</el-menu-item>
+                    <el-menu-item index="5">德士尼智能家园</el-menu-item>
+                  </el-menu>
+                  <v-carousel1></v-carousel1></b-card-text></b-tab>
               </b-tabs>
             </b-card>
           </div>

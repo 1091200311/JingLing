@@ -14,7 +14,7 @@
                   <b-card-text>
                   <b-row>
                     <b-col cols="3" v-for="entertainment in entertainmentList" :key="entertainment.id">
-                      <router-link :to="{path:'/s',query:{id:entertainment.id}}">
+                      <router-link :to="'/s/'+entertainment.id">
                       <div style="position: relative;padding: 20px;box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);">
                         <img class="tip" :src="entertainment.pic">
                         <div class="name">{{entertainment.name}}</div>
@@ -116,7 +116,7 @@
       data() {
         return {
           entertainmentList: [],
-          entertainment:{},
+          // entertainment:{},
           lifeList: [
             {
               "id": 1,
