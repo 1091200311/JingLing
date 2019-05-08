@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="container">
-      <h2 style="text-align: center">精灵具备以下技能</h2>
+      <h2 style="text-align: center;padding-top: 124px;padding-bottom: 88px;">精灵具备以下技能</h2>
       <b-row>
-        <b-col v-for="skills in skillsList":key="skills.id">
+        <b-col v-for="skills in skillsList" :key="skills.id">
           <div class="list">
             <img class="pic" :src="skills.url">
             <p class="name">{{skills.name}}</p>

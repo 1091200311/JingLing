@@ -33,15 +33,15 @@
       },
       activated() {
         this.id=this.$route.params.id;
+        console.log(this.id);
         if (this.id==1){
-          this.entertainment=[
+          this.entertainment=
             {
               "id":1,
               "pic":"https://ailabs.alibabausercontent.com/images/36062/1551065148969.png",
               "name":"精灵点歌台",
               "desc":"“精灵点歌台”"
             }
-          ]
         }
       }
     }

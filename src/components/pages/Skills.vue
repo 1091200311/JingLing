@@ -3,6 +3,17 @@
       <v-carousel></v-carousel>
       <div style="padding-top: 50px">
         <div class="content">
+          <div style="padding-top: 124px;padding-bottom: 88px;">
+            <h2 style="font-size: 36px;text-align: center">声活广场</h2>
+            <b-card no-body>
+              <b-tabs pills card>
+                <b-tab title="声活常用"><b-card-text><img src="https://img.alicdn.com/tfs/TB1Le5pQQvoK1RjSZFDXXXY3pXa-1200-200.png"></b-card-text></b-tab>
+                <b-tab title="早晚必听"><b-card-text></b-card-text></b-tab>
+                <b-tab title="游戏达人"><b-card-text></b-card-text></b-tab>
+                <b-tab title="宝宝教育"><b-card-text></b-card-text></b-tab>
+              </b-tabs>
+            </b-card>
+          </div>
           <div style="text-align: center;font-size: 30px">
             <div>云端服务功能</div>
             <p>小小的精灵在云端有大大的知识图谱，她的能力超乎你想象</p>
@@ -116,7 +127,6 @@
       data() {
         return {
           entertainmentList: [],
-          // entertainment:{},
           lifeList: [
             {
               "id": 1,
