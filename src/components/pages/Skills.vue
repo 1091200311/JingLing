@@ -41,7 +41,7 @@
                     <b-col cols="3" v-for="life in lifeList" :key="life.id">
                       <router-link :to="'s'/+life.id">
                       <div style="position: relative;padding: 20px;box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);">
-                        <img class="tip" :src="life.url">
+                        <img class="tip" :src="life.pic">
                         <div class="name">{{life.name}}</div>
                         <p class="desc">{{life.desc}}</p>
                       </div>
@@ -55,7 +55,7 @@
                     <b-col cols="3" v-for="education in educationList" :key="education.id">
                       <router-link :to="'s'/+education.id">
                       <div style="position: relative;padding: 20px;box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);">
-                        <img class="tip" :src="education.url">
+                        <img class="tip" :src="education.pic">
                         <div class="name">{{education.name}}</div>
                         <p class="desc">{{education.desc}}</p>
                       </div>
@@ -127,58 +127,8 @@
       data() {
         return {
           entertainmentList: [],
-          lifeList: [
-            {
-              "id": 1,
-              "url": "http://ailabs.alibabausercontent.com/images/26734/1552900535439.jpg",
-              "name": "二里 微光",
-              "desc": "“微光再讲”"
-            },
-            {
-              "id": 2,
-              "url": "http://ailabs.alibabausercontent.com/images/26734/1552900535439.jpg",
-              "name": "八段锦 口令版",
-              "desc": "“八段锦”"
-            },
-            {
-              "id": 3,
-              "url": "http://ailabs.alibabausercontent.com/images/26745/1551972238238.jpeg",
-              "name": "女王节栏目",
-              "desc": "“女王节栏目”"
-            },
-            {
-              "id": 4,
-              "url": "http://ailabs.alibabausercontent.com/images/26732/1551925942443.jpg",
-              "name": "张德芬访谈",
-              "desc": "“张德芬访谈”"
-            },
-          ],
-          educationList: [
-            {
-              "id": 1,
-              "url": "http://ailabs.alibabausercontent.com/images/42954/1554092991849.png",
-              "name": "汉源语文",
-              "desc": "“汉源语文”"
-            },
-            {
-              "id": 2,
-              "url": "http://ailabs.alibabausercontent.com/images/1147/1553504365134.png",
-              "name": "义方小学英语",
-              "desc": "“义方小学英语”"
-            },
-            {
-              "id": 3,
-              "url": "http://ailabs.alibabausercontent.com/images/44222/1555491683550.png",
-              "name": "高考倒计时",
-              "desc": "“高考倒计时”"
-            },
-            {
-              "id": 4,
-              "url": "http://ailabs.alibabausercontent.com/images/1147/1551341169625.png",
-              "name": "义方幼儿阅读",
-              "desc": "“义方幼儿阅读”",
-            }
-          ],
+          lifeList:[],
+          educationList:[],
           gameList: [
             {
               "id": 1,
@@ -262,6 +212,18 @@
           .get('http://localhost:8080/entertainment/all')
           .then(function (response) {
             _this.entertainmentList = response.data;
+          });
+        var that = this;
+        this.$http
+          .get('http://localhost:8080/life/all')
+          .then(function (response) {
+            that.lifeList = response.data;
+          });
+        var _that = this;
+        this.$http
+          .get('http://localhost:8080/education/all')
+          .then(function (response) {
+            _that.educationList = response.data;
           })
       }
     }
